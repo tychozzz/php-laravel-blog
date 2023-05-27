@@ -19,12 +19,6 @@
       <ul class="navbar-nav navbar-right">
         <!-- Authentication Links -->
         @guest
-          {{env('DB_HOST')}}
-          {{env('DB_PORT')}}
-          {{env('DB_DATABASE')}}
-          {{env('DB_USERNAME')}}
-          {{env('DB_PASSWORD')}}
-
           <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">登录</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">注册</a></li>
         @else
