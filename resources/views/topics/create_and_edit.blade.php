@@ -30,7 +30,7 @@
 
                   <div class="mb-3">
                     <input class="form-control" type="text" name="title" value="{{ old('title', $topic->title) }}"
-                           placeholder="请填写标题" required />
+                           placeholder="请填写标题" required/>
                   </div>
 
                   <div class="mb-3">
@@ -48,7 +48,8 @@
                   </div>
 
                   <div class="well well-sm">
-                    <button type="submit" class="btn btn-primary"><i class="far fa-save mr-2" aria-hidden="true"></i> 保存</button>
+                    <button type="submit" class="btn btn-primary"><i class="far fa-save mr-2" aria-hidden="true"></i> 保存
+                    </button>
                   </div>
                 </form>
         </div>
@@ -56,3 +57,22 @@
     </div>
   </div>
 @endsection
+
+@section('styles')
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/simditor.css') }}">
+@stop
+
+@section('scripts')
+  <script type="text/javascript" src="{{ asset('js/module.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/hotkeys.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/uploader.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/simditor.js') }}"></script>
+
+  <script>
+    $(document).ready(function() {
+      var editor = new Simditor({
+        textarea: $('#editor'),
+      });
+    });
+  </script>
+@stop
