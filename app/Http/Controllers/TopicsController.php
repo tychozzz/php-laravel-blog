@@ -47,7 +47,8 @@ class TopicsController extends Controller
     public function edit(Topic $topic)
     {
         $this->authorize('update', $topic);
-        return view('topics.create_and_edit', compact('topic'));
+        $categories = Category::all();
+        return view('topics.create_and_edit', compact('topic', 'categories'));
     }
 
     public function update(TopicRequest $request, Topic $topic)
@@ -55,7 +56,7 @@ class TopicsController extends Controller
         $this->authorize('update', $topic);
         $topic->update($request->all());
 
-        return redirect()->route('topics.show', $topic->id)->with('message', 'Updated successfully.');
+        return redirect()->route('topics.show', $topic->id)->with('success', '更新成功！');
     }
 
     public function destroy(Topic $topic)
@@ -69,16 +70,16 @@ class TopicsController extends Controller
     public function uploadImage(Request $request, ImageUploadHandler $uploader)
     {
         $data = [
-            'success'   => false,
-            'msg'       => '上传失败!',
+            'success' => false,
+            'msg' => '上传失败!',
             'file_path' => ''
         ];
         if ($file = $request->upload_file) {
             $result = $uploader->save($file, 'topics', Auth::id(), 1024);
             if ($result) {
                 $data['file_path'] = $result['path'];
-                $data['msg']       = "上传成功!";
-                $data['success']   = true;
+                $data['msg'] = "上传成功!";
+                $data['success'] = true;
             }
         }
         return $data;
