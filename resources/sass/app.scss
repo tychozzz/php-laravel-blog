@@ -139,3 +139,18 @@ body {
     color: #b3b3b3;
   }
 }
+
+.notification-badge {
+  .badge {
+    font-size: 12px;
+    margin-top: 14px;
+  }
+
+  .badge-secondary {
+    background-color: #EBE8E8!important;
+  }
+
+  .badge-hint {
+    background-color: #d15b47 !important;
+  }
+}
