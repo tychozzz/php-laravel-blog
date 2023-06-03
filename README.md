@@ -18,7 +18,7 @@
      ./vendor/bin/sail up
      ```
 
-3.   配置相应数据库配置，具体配置参照项目 `.env` 文件
+3.   配置相应数据库配置，具体配置参照项目 `.env.example` 文件，修改完毕后将其改为 `.env` 文件
 
      ```
      DB_CONNECTION=mysql
