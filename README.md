@@ -37,5 +37,11 @@
      ```
      php artisan migrate:refresh --seed  
      ```
+     
+5.   执行如下命令，监听前端页面变化并动态更新网页
 
-5.   访问 `localhost:80` 地址
+     ```
+     npm run watch-poll
+     ```
+
+6.   访问 `localhost:80` 地址
