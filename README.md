@@ -8,9 +8,11 @@
 
 ## Quick Start
 
-1.   安装Sail容器（需要使用Docker）
+1.   安装composer依赖
 
-     具体安装参照：https://learnku.com/docs/laravel-development-environment/9.x/building-the-sail-environment-under-macos/12319#cca348
+     ```
+     composer install
+     ```
 
 2.   启动Sail容器
 
@@ -38,9 +40,10 @@
      php artisan migrate:refresh --seed  
      ```
      
-5.   执行如下命令，监听前端页面变化并动态更新网页
+5.   执行如下命令，安装依赖，监听前端页面变化并动态更新网页
 
      ```
+     npm install
      npm run watch-poll
      ```
 
